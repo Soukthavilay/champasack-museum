@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom'
 import { useLanguage } from '../contexts/LanguageContext'
 import PageWrapper from '../components/PageWrapper'
 
+const base = import.meta.env.BASE_URL
+
 const artifactFiles = {
   artifact_001: {
-    la: '/data/artifact_001_la.json',
-    en: '/data/artifact_001_en.json'
+    la: `${base}data/artifact_001_la.json`,
+    en: `${base}data/artifact_001_en.json`,
   }
 }
 
@@ -44,7 +46,7 @@ const Home = () => {
         {artifacts.map(a => (
           <Link
             key={a.id}
-            to={`/artifact/${a.id}`}
+            to={`/champasack-museum/artifact/${a.id}`}
             className="group rounded-2xl border shadow hover:shadow-lg transition-all duration-200 bg-white overflow-hidden"
           >
             <div className="aspect-[4/3] overflow-hidden bg-gray-100">

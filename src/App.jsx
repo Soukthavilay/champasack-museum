@@ -10,8 +10,8 @@ function App() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route path="/artifact/:id" element={<ArtifactPage />} />
+        <Route path="/champasack-museum" element={<Home />} />
+        <Route path="/champasack-museum/artifact/:id" element={<ArtifactPage />} />
       </Routes>
     </AnimatePresence>
   )

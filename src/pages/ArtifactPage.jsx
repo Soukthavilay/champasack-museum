@@ -14,8 +14,9 @@ const ArtifactPage = () => {
 
   useEffect(() => {
     const jsonFile = `${id}${lang === 'en' ? '_en' : '_la'}.json`
+    const filePath = `${import.meta.env.BASE_URL}data/${jsonFile}`
 
-    fetch(`/data/${jsonFile}`)
+    fetch(filePath)
       .then(res => res.json())
       .then(setData)
       .catch(() => setData(null))
@@ -37,7 +38,7 @@ const ArtifactPage = () => {
       {/* Breadcrumbs & back */}
       <div className="mb-6 flex items-center justify-between text-sm text-gray-500">
         <div>
-          <Link to="/" className="hover:underline text-indigo-600">
+          <Link to="/champasack-museum/" className="hover:underline text-indigo-600">
             ← {lang === 'la' ? 'ກັບໄປໜ້າຫຼັກ' : 'Back to Home'}
           </Link>
         </div>
